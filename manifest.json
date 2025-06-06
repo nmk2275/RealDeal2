@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "RealDeal Extension",
+  "version": "1.0",
+  "description": "Helps users detect eCommerce scams with price tracking, seller verification, and review analysis.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://www.meesho.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.meesho.com/*"],
+      "js": [
+        "node_modules/jquery/dist/jquery.min.js",
+        "content.js",
+        "scripts/setup.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+  {
+    "resources": [
+      "images/*",
+      "node_modules/highcharts/highcharts.js",
+      "node_modules/jquery/dist/jquery.min.js"
+    ],
+    "matches": ["<all_urls>"]
+  }
+]
+  
+}
